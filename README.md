@@ -1,6 +1,12 @@
 文本翻译
 ====
-腾讯君翻译，腾讯 AI 翻译
+腾讯翻译君翻译，百度翻译
+
+[![Latest Stable Version](https://poser.pugx.org/yiier/yii2-translate/v/stable)](https://packagist.org/packages/yiier/yii2-translate) 
+[![Total Downloads](https://poser.pugx.org/yiier/yii2-translate/downloads)](https://packagist.org/packages/yiier/yii2-translate) 
+[![Latest Unstable Version](https://poser.pugx.org/yiier/yii2-translate/v/unstable)](https://packagist.org/packages/yiier/yii2-translate) 
+[![License](https://poser.pugx.org/yiier/yii2-translate/license)](https://packagist.org/packages/yiier/yii2-translate)
+
 
 Installation
 ------------
