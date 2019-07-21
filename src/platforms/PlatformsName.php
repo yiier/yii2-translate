@@ -10,6 +10,6 @@ namespace yiier\translate\platforms;
 
 class PlatformsName
 {
-    const QQ_TRANSLATION_PLATFORM = 'qq_translation'; // QQ 翻译君
+    const QQTRANSLATION_PLATFORM = 'qqtranslation'; // QQ 翻译君
     const BAIDU_PLATFORM = 'baidu'; // 百度翻译
 }

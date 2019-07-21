@@ -12,10 +12,10 @@ use yiier\translate\exceptions\TranslateException;
 /**
  * QQ 翻译君
  * https://ai.qq.com/doc/nlptrans.shtml
- * Class QqTranslationPlatform
+ * Class QqtranslationPlatform
  * @package yiier\translate\platforms
  */
-class QqTranslationPlatform extends Platform
+class QqtranslationPlatform extends Platform
 {
     const ENDPOINT = 'https://api.ai.qq.com/fcgi-bin/nlp/nlp_texttranslate';
 

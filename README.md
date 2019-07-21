@@ -42,7 +42,7 @@ $config = [
 
     // 可用的平台配置
     'platforms' => [
-       'qq_translation' => [
+       'qqtranslation' => [
             'app_id' => '你的 QQ AI 应用ID',
             'app_key' => '你的 QQ AI 应用密钥',
         ],
@@ -53,7 +53,7 @@ $config = [
     ],
 ];
 
-$translate = new \yiier\translate\Translate($config, 'qq_translation');
+$translate = new \yiier\translate\Translate($config, 'qqtranslation');
 
 $translate->translate('今天天气怎么样');
 
