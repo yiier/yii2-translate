@@ -27,7 +27,7 @@ class BaiduPlatform extends Platform
     protected static $language = [
         'zh' => 'zh',   //中文
         'en' => 'en',   //英文
-        'jp' => 'jp',   //日文
+        'ja' => 'jp',   //日文
         'ko' => 'kor',  //韩文
         'fr' => 'fra',  //法文
         'ru' => 'ru',   //俄文
@@ -89,7 +89,7 @@ class BaiduPlatform extends Platform
      *
      * @param  string $result
      * @throws TranslateException
-     * @return array
+     * @return string
      */
     protected function parseResult($result)
     {

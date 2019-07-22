@@ -28,7 +28,7 @@ class QqtranslationPlatform extends Platform
         'auto' => 'auto', // 中英互译
         'zh' => 'zh',   //中文
         'en' => 'en',   //英文
-        'jp' => 'jp',   //日文
+        'ja' => 'jp',   //日文
         'ko' => 'kr',  //韩文
         'fr' => 'fr',  //法文
         'ru' => 'ru',   //俄文
@@ -108,7 +108,7 @@ class QqtranslationPlatform extends Platform
      *
      * @param  string $result
      * @throws TranslateException
-     * @return array
+     * @return string
      */
     protected function parseResult($result)
     {
