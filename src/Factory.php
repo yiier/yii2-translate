@@ -98,7 +98,7 @@ class Factory
     protected function makePlatform($platform, $config)
     {
         if (!\class_exists($platform) || !\in_array(PlatformInterface::class, \class_implements($platform))) {
-            throw new InvalidArgumentException(\sprintf('Class "%s" is a invalid express platform.', $platform));
+            throw new InvalidArgumentException(\sprintf('Class "%s" is a invalid translate platform.', $platform));
         }
         return new $platform($config);
     }
