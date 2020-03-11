@@ -1,6 +1,6 @@
 文本翻译
 ====
-腾讯翻译君翻译，百度翻译
+腾讯翻译君翻译，百度翻译，谷歌翻译
 
 [![Latest Stable Version](https://poser.pugx.org/yiier/yii2-translate/v/stable)](https://packagist.org/packages/yiier/yii2-translate) 
 [![Total Downloads](https://poser.pugx.org/yiier/yii2-translate/downloads)](https://packagist.org/packages/yiier/yii2-translate) 
