@@ -50,6 +50,9 @@ $config = [
             'app_id' => '百度翻译应用 ID',
             'app_key' => '百度翻译应用秘钥',
        ],
+       'google_v2' => [
+            'key' => 'xxx', // https://console.cloud.google.com/apis/credentials
+        ],
     ],
 ];
 
@@ -65,3 +68,10 @@ $translate->setTo('de')->translate('今天天气怎么样');
 ```
 
 如果使用 `setFrom` 或者 `setTo`，会忽略配置文件中的配置。
+
+
+## 参考文档
+
+- [[译] 使用谷歌Cloud Translation API翻译文本](https://segmentfault.com/a/1190000014205232)
+- [Translate Text with the Translation API](https://codelabs.developers.google.com/codelabs/cloud-translation-intro/#0)
+
