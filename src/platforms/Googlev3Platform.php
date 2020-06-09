@@ -7,13 +7,14 @@
 
 namespace yiier\translate\platforms;
 
+use Google\Cloud\Translate\V3\TranslationServiceClient;
 use yii\helpers\ArrayHelper;
 use yiier\translate\exceptions\TranslateException;
 
 /**
  * 谷歌v3版本翻译
  * https://cloud.google.com/translate/docs/advanced/translating-text-v3
- * Class Googlev2Platform
+ * Class Googlev3Platform
  * @package yiier\translate\platforms
  */
 class Googlev3Platform extends Platform
@@ -36,7 +37,7 @@ class Googlev3Platform extends Platform
 
         $client = new \GuzzleHttp\Client([
             'headers' => $headers,
-            'Authorization' => 'Bearer '.$this->config->get('token') ,
+            'Authorization' => 'Bearer ' . $this->config->get('token'),
             'timeout' => method_exists($this, 'getTimeout') ? $this->getTimeout() : 5.0,
         ]);
 
@@ -49,6 +50,26 @@ class Googlev3Platform extends Platform
     public function translate(string $string, string $from, string $to)
     {
         $projectId = $this->config->get('project_id');
+        putenv('GOOGLE_APPLICATION_CREDENTIALS=/var/www/ft-erp/web/google.json');
+        $translationClient = new TranslationServiceClient([
+            'credentials' => getenv('GOOGLE_APPLICATION_CREDENTIALS')
+            // 'keyFile' => json_decode(file_get_contents('/path/to/keyfile.json'), true)
+        ]);
+        $content = [$string];
+        $response = $translationClient->translateText(
+            $content,
+            $to,
+            TranslationServiceClient::locationName($projectId, 'global')
+        );
+
+        foreach ($response->getTranslations() as $key => $translation) {
+            $separator = $key === 2
+                ? '!'
+                : ', ';
+            echo $translation->getTranslatedText() . $separator;
+        }
+        pr(1);
+
         $params = [
             'contents' => [$string],
             'targetLanguageCode' => $to,
@@ -56,7 +77,7 @@ class Googlev3Platform extends Platform
             'model' => sprintf('projects/%s/locations/global/models/general/base', $projectId),
         ];
 
-        $response = $this->client->post(sprintf($this->endpoint,$projectId), ['json' => $params]);
+        $response = $this->client->post(sprintf($this->endpoint, $projectId), ['json' => $params]);
         return $this->parseResult((string)$response->getBody());
     }
 

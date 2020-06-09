@@ -1,6 +1,6 @@
 文本翻译
 ====
-腾讯翻译君翻译，百度翻译，谷歌翻译
+腾讯翻译君翻译，百度翻译，谷歌翻译, 彩云小译
 
 [![Latest Stable Version](https://poser.pugx.org/yiier/yii2-translate/v/stable)](https://packagist.org/packages/yiier/yii2-translate) 
 [![Total Downloads](https://poser.pugx.org/yiier/yii2-translate/downloads)](https://packagist.org/packages/yiier/yii2-translate) 
@@ -53,6 +53,9 @@ $config = [
        'google_v2' => [
             'key' => 'xxx', // https://console.cloud.google.com/apis/credentials
         ],
+       'caiyun' => [
+            'token' => 'xxx', // https://fanyi.caiyunapp.com/#/api
+       ],
     ],
 ];
 
@@ -69,6 +72,8 @@ $translate->setTo('de')->translate('今天天气怎么样');
 
 如果使用 `setFrom` 或者 `setTo`，会忽略配置文件中的配置。
 
+
+PS：语言支持以 Google 的[《语言支持》](https://cloud.google.com/translate/docs/languages) 为标准。
 
 ## 参考文档
 
