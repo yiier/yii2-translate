@@ -36,32 +36,32 @@ Usage
 
 $config = [
     // HTTP 请求的超时时间（秒）
-	'timeout' => 5.0,
-	'from' => 'zh', // 源本语言，可选参数，默认是 zh
-	'to' => 'en', // 要翻译成的语言，可选参数，默认是 en
+    'timeout' => 5.0,
+    'from' => 'zh', // 源本语言，可选参数，默认是 zh
+    'to' => 'en', // 要翻译成的语言，可选参数，默认是 en
 
     // 可用的平台配置
-	'platforms' => [
-		'qqtranslation' => [
-			'app_id' => '你的 QQ AI 应用ID',
-			'app_key' => '你的 QQ AI 应用密钥',
-		],
-		'baidu' => [
-			'app_id' => '百度翻译应用 ID',
-			'app_key' => '百度翻译应用秘钥',
-		],
-		'google_v2' => [
-			'key' => 'xxx', // https://console.cloud.google.com/apis/credentials
-		],
-		'google_v3' => [
-			'project_id' => 'xxxx', // Optional
-             // https://github.com/googleapis/google-cloud-php/blob/master/AUTHENTICATION.md
-			'key_json' => '{"type":"xx","project_id":"xx","private_key_id":"xx","private_key":"","client_email":"xx","client_id":"xx","auth_uri":"xx","token_uri":"xx","auth_provider_x509_cert_url":"xx","client_x509_cert_url":"xx"}',
-		],
-		'caiyun' => [
-			'token' => 'xxx', // https://fanyi.caiyunapp.com/#/api
-		],
-	],
+    'platforms' => [
+        'qqtranslation' => [
+            'app_id' => '你的 QQ AI 应用ID',
+            'app_key' => '你的 QQ AI 应用密钥',
+        ],
+        'baidu' => [
+            'app_id' => '百度翻译应用 ID',
+            'app_key' => '百度翻译应用秘钥',
+        ],
+        'google_v2' => [
+            'key' => 'xxx', // https://console.cloud.google.com/apis/credentials
+        ],
+        'google_v3' => [
+            'project_id' => 'xxxx', // Optional
+            // https://github.com/googleapis/google-cloud-php/blob/master/AUTHENTICATION.md
+            'key_json' => '{"type":"xx","project_id":"xx","private_key_id":"xx","private_key":"","client_email":"xx","client_id":"xx","auth_uri":"xx","token_uri":"xx","auth_provider_x509_cert_url":"xx","client_x509_cert_url":"xx"}',
+        ],
+        'caiyun' => [
+            'token' => 'xxx', // https://fanyi.caiyunapp.com/#/api
+        ],
+    ],
 ];
 
 $translate = new \yiier\translate\Translate($config, 'qqtranslation');
@@ -73,7 +73,6 @@ $translate->setFrom('zh')->translate('今天天气怎么样');
 $translate->setFrom('zh')->setTo('de')->translate('今天天气怎么样');
 
 $translate->setTo('de')->translate('今天天气怎么样');
-
 ```
 
 如果使用 `setFrom` 或者 `setTo`，会忽略配置文件中的配置。
